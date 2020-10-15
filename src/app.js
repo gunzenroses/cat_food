@@ -12,5 +12,5 @@ import "styles/_index.scss";
 import "./views/index.pug";
 
 window.onload = function () {
-  require("scripts/data");
+  require("scripts/itemHover")
 };

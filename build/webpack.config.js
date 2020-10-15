@@ -102,19 +102,12 @@ module.exports = (env) => {
             name: "assets/images/[name].[hash:7].[ext]",
           },
         },
-        // {
-        //   test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        //   loader: "url-loader",
-        //   options: {
-        //     limit: 5000,
-        //     name: "assets/fonts/[name].[hash:7].[ext]",
-        //   },
-        // },
         {
-          test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
-          loader: "file-loader",
+          test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+          loader: "url-loader",
           options: {
-            name: "assets/fonts/[name].[ext]",
+            limit: 5000,
+            name: "assets/fonts/[name].[hash:7].[ext]",
           },
         },
         {
@@ -153,8 +146,20 @@ module.exports = (env) => {
 
     plugins: [
       new CopyWebpackPlugin([
-        {from: "assets/images", to: "assets/images"},
-        {from: "assets/fonts", to: "assets/fonts"},
+        { from: "../manifest.json", to: "manifest.json" },
+        { from: "../browserconfig.xml", to: "browserconfig.xml" },
+        {
+          from: "assets/images/favicons/android-chrome-192x192.png",
+          to: "assets/images/android-chrome-192x192.png",
+        },
+        {
+          from: "assets/images/favicons/android-chrome-256x256.png",
+          to: "assets/images/android-chrome-256x256.png",
+        },
+        {
+          from: "assets/images/favicons/mstile-150x150.png",
+          to: "assets/images/mstile-150x150.png",
+        },
       ]),
       new MiniCssExtractPlugin({
         filename: "assets/css/[name].[hash:7].bundle.css",
