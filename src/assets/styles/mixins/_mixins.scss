@@ -16,8 +16,8 @@
 }
 
 @mixin container($width: 1124, $height: 680, $margin: auto, $padding: 0) {
-  max-width: $width + px;
-  max-height: $height + px;
+  width: $width + px;
+  height: $height + px;
   margin: $margin;
   padding: $padding;
 }

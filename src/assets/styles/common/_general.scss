@@ -9,9 +9,19 @@ body {
   height: 100%;
 }
 body {
-  @include container(1200);
   font-family: $trebuchet;
 }
+
+.main-container {
+  @include container(1200);
+  background: url(/assets/images/Pattern.png);
+
+  @media (-webkit-min-device-pixel-ratio: 1.5), 
+  (min-resolution: 144dpi) {
+    background: url(/assets/images/Pattern@2x.png);
+  }
+}
+
 h1,
 h2,
 h3,
