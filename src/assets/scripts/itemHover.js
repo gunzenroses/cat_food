@@ -1,36 +1,31 @@
 for (let i=0; i<3;i++){
 
-    let product__item = Array.from(document.getElementsByClassName('product__item'))[i];
-    let corner = Array.from(document.getElementsByClassName('corner'))[i];
+    let product__container = Array.from(document.getElementsByClassName('product__container'))[i];
     let product__circle = Array.from(document.getElementsByClassName('product__circle'))[i];
 
-    product__item.onmouseover = function(){
-        if (product__item.classList.contains('selected')){
-            product__item.style.border = "4px solid #E52E7A";
-            corner.style.border = "4px solid #E52E7A";
+    product__container.onmouseover = function(){
+        if (product__container.classList.contains('selected')){
+            product__container.style.background = "linear-gradient(135.37deg, transparent 25.5px, #E52E7A 0)";
             product__circle.style.background = "#E52E7A";
         } else {
-            product__item.style.border = "4px solid #2EA8E6";
-            corner.style.border = "4px solid #2EA8E6";
+            product__container.style.background = "linear-gradient(135.37deg, transparent 25.5px, #2EA8E6 0)";
             product__circle.style.background = "#2EA8E6";
         }
     }
 
-    product__item.onmouseout = function(){
-        if (product__item.classList.contains('selected')){
-            product__item.style.border = "4px solid #D91667";
-            corner.style.border = "4px solid #D91667";
+    product__container.onmouseout = function(){
+        if (product__container.classList.contains('selected')){
+            product__container.style.background = "linear-gradient(135.37deg, transparent 25.5px, #D91667 0)";
             product__circle.style.background = "#D91667";
         } else {
-            product__item.style.border = "4px solid #1698D9";
-            corner.style.border = "4px solid #1698D9";
+            product__container.style.background = "linear-gradient(135.37deg, transparent 25.5px, #1698D9 0)";
             product__circle.style.background = "#1698D9";
         }
     }
 
-    product__item.onclick = function(){
-        product__item.classList.toggle('selected');
-        corner.classList.toggle('selected');
+    product__container.onclick = function(){
+        console.log(Array.from(product__container.classList));
+        product__container.classList.toggle('selected');
         product__circle.classList.toggle('selected_color');
     }
 

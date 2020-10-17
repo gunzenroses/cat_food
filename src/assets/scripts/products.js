@@ -23,18 +23,17 @@ class ShowProducts {
             `
                 <li class="content__item">
                     <div class="product__container">
-                        <div class="corner">
-                            <div class=${this.classItem}>
+                        <div class=${this.classItem}>
                             
-                                <p class=${this.classMotto}>${product.motto}</p>
-                                <h4 class=${this.classTitle}>${product.title}</h4>
-                                <p class=${this.classTaste}>${product.taste}</p>
-                                <p class=${this.classAmount}>${product.amount}</p>
-                                <img class=${this.classImg} src=${product.img}, alt="cat")/>
-                                <div="product__circle">
-                                    <p class=${this.classWeight}>${product.weight}</p>
-                                    <p class="product__subweight">кг</p>
-                                </div>
+                            <p class=${this.classMotto}>${product.motto}</p>
+                            <h4 class=${this.classTitle}>${product.title}</h4>
+                            <p class=${this.classTaste}>${product.taste}</p>
+                            <p class=${this.classAmount}>${product.amount}</p>
+                            <img class=${this.classImg} src=${product.img}, alt="cat")/>
+                            <div class="product__circle">
+                                <p class=${this.classWeight}>${product.weight}</p>
+                                <p class="product__subweight">кг</p>
+                            </div>
                             </div>
                         </div>
                     </div>
