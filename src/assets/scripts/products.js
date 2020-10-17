@@ -14,6 +14,7 @@ class ShowProducts {
         this.classImg = params.classImg
         this.classWeight = params.classWeight
         this.classMessage = params.classMessage
+        this.classSpan = params.classSpan
     }
 
     render(){
@@ -29,7 +30,7 @@ class ShowProducts {
                             <h4 class=${this.classTitle}>${product.title}</h4>
                             <p class=${this.classTaste}>${product.taste}</p>
                             <p class=${this.classAmount}>${product.amount}</p>
-                            <img class=${this.classImg} src=${product.img}, alt="cat")/>
+                            <img class=${this.classImg} src="${product.img}", alt="cat")/>
                             <div class="product__circle">
                                 <p class=${this.classWeight}>${product.weight}</p>
                                 <p class="product__subweight">кг</p>
@@ -37,7 +38,7 @@ class ShowProducts {
                             </div>
                         </div>
                     </div>
-                    <p class=${this.classMessage}>${product.message}</p>
+                    <p class=${this.classMessage}>${product.message} <span class=${this.classSpan}>${product.span}</span></p>
                 </li>
             `
         })
@@ -52,10 +53,11 @@ const productsRender = new ShowProducts({
     classMotto: 'product__motto',
     classTitle: 'product__title',
     classTaste: 'product__taste',
-    classAmount: 'product_amount',
+    classAmount: 'product__amount',
     classImg: 'product__img',
     classWeight: 'product__weight',
-    classMessage: 'product__message'
+    classMessage: 'product__message',
+    classSpan: 'link',
 })
 
 productsRender.render();

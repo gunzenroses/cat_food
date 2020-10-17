@@ -32,30 +32,30 @@
 
     &__container {
         width: 320px;
-        height: 480px;
+        height: 499px;
         border-radius: 12px;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(135.37deg, transparent 25.5px, #1698D9 0);
+        background: linear-gradient(135deg, transparent 30px, #1698D9 0);
     }
 
     &__item {
-        border-sizing: border-box;
+        box-sizing: border-box;
         position: relative;
         width: 312px;
-        height: 472px;
+        height: 491px;
         background-color: #F2F2F2;
         display: flex;
         flex-direction: column;
         overflow: hidden;
         border-radius: 8px;
-        background: linear-gradient(135.37deg, transparent 24px, white 0);
+        background: linear-gradient(135deg, transparent 29px, white 0);
 }
 
     &__motto {
         width: 218px;
-        margin: 17px auto 0;
+        margin: 29px auto 0;
         height: 20px;
         display: block;
         font-size: 16px;
@@ -72,7 +72,7 @@
         font-size: 48px;
     }
 
-    &___taste {
+    &__taste {
         display: block;
         position: absolute;
         height: 65px;
@@ -109,6 +109,7 @@
         width:80px;
         height: 80px;
         border-radius: 50%;
+        color: #fff;
     }
 
     &__weight {
@@ -116,11 +117,10 @@
         position: absolute;
         height: 22px;
         width: 57px;
-        margin-left: 12.5px;
-        margin-top: 24px;
+        margin: 24px 12.5px 0;
         font-size: 42px;
+        text-align: center;
         line-height: 22px;
-        color: #fff;
     }
 
     &__subweight {
@@ -129,9 +129,7 @@
         height: 22px;
         font-size: 21px;
         line-height: 22px;
-        margin-left: 30.5px;
-        margin-top: 54px;
-        color: #fff;
+        margin: 54px 30.5px 0;
     }
 
     &__message {
