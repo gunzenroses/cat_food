@@ -1,6 +1,7 @@
 export const productsData = [
     {
         id: 1,
+        itemLeft: 1,
         motto: 'Сказочное заморское яство',
         title: 'Нямушка',
         taste: 'с фуа-гра',
@@ -8,10 +9,12 @@ export const productsData = [
         img: "assets/images/cat.png",
         weight: '0,5',
         message: 'Чего сидишь? Порадуй кота, ',
-        span: 'купи'
+        message2: 'Печень утки разварная с артишоками.',
+        span: 'купи',    
     },
     {
         id: 2,
+        itemLeft: 1,
         motto: 'Сказочное заморское яство',
         title: 'Нямушка',
         taste: 'с рыбой',
@@ -19,10 +22,12 @@ export const productsData = [
         img: "assets/images/cat.png",
         weight: '2',
         message: 'Чего сидишь? Порадуй кота, ',
+        message2: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
         span: 'купи'
     },
     {
         id: 3,
+        itemLeft: 1,
         motto: 'Сказочное заморское яство',
         title: 'Нямушка',
         taste: 'с курой',
@@ -30,6 +35,7 @@ export const productsData = [
         img: "assets/images/cat.png",
         weight: '5',
         message: 'Чего сидишь? Порадуй кота, ',
+        message2: 'Филе из цыплят с трюфелями в бульоне.',
         span: 'купи'
     },
     

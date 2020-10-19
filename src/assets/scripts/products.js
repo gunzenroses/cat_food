@@ -38,7 +38,7 @@ class ShowProducts {
                             </div>
                         </div>
                     </div>
-                    <p class=${this.classMessage}>${product.message} <span class=${this.classSpan}>${product.span}</span></p>
+                <p class=${this.classMessage}>${product.message}<span class='link'>${product.span}</span></p>
                 </li>
             `
         })
@@ -56,8 +56,7 @@ const productsRender = new ShowProducts({
     classAmount: 'product__amount',
     classImg: 'product__img',
     classWeight: 'product__weight',
-    classMessage: 'product__message',
-    classSpan: 'link',
+    classMessage: 'product__message'
 })
 
 productsRender.render();
