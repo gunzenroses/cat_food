@@ -1,7 +1,3 @@
-import { productsData } from '../data/products.data'
-
-const products = [...productsData];
-
 class ShowProducts {
     constructor(params) {
         this.data = params.data
@@ -24,7 +20,7 @@ class ShowProducts {
             `
                 <li class="content__item">
                     <div class="product__container">
-                        <div class=${this.classItem}>
+                        <div class=${this.classItem} id=${product.id}>
                             
                             <p class=${this.classMotto}>${product.motto}</p>
                             <h4 class=${this.classTitle}>${product.title}</h4>
@@ -45,17 +41,5 @@ class ShowProducts {
     }
 }
 
-const productsRender = new ShowProducts({
-    data: products,
-    parentElement: 'content__list',
-    classItem: 'product__item',
-    classMotto: 'product__motto',
-    classTitle: 'product__title',
-    classTaste: 'product__taste',
-    classAmount: 'product__amount',
-    classImg: 'product__img',
-    classWeight: 'product__weight',
-    classMessage: 'product__message'
-})
 
-productsRender.render();
+export { ShowProducts }

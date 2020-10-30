@@ -1,6 +1,6 @@
-export const productsData = [
+const productsData = [
     {
-        id: 1,
+        id: 0,
         itemLeft: 1,
         motto: 'Сказочное заморское яство',
         title: 'Нямушка',
@@ -13,7 +13,7 @@ export const productsData = [
         span: 'купи',    
     },
     {
-        id: 2,
+        id: 1,
         itemLeft: 1,
         motto: 'Сказочное заморское яство',
         title: 'Нямушка',
@@ -26,7 +26,7 @@ export const productsData = [
         span: 'купи'
     },
     {
-        id: 3,
+        id: 2,
         itemLeft: 1,
         motto: 'Сказочное заморское яство',
         title: 'Нямушка',
@@ -40,3 +40,5 @@ export const productsData = [
     },
     
 ]
+
+export { productsData }

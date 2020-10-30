@@ -3,11 +3,11 @@ import { productsData } from '../data/products.data'
 const products = [...productsData];
 
 for (let i=0; i<3;i++){
-
     //make variables for interaction with DOM
     let product__container = Array.from(document.getElementsByClassName('product__container'))[i];
     let product__circle = Array.from(document.getElementsByClassName('product__circle'))[i];
     let product__message =  Array.from(document.getElementsByClassName('product__message'))[i];
+
 
     //view: change the style of the product item (event mouseover)
     product__container.onmouseover = function(){
@@ -20,6 +20,7 @@ for (let i=0; i<3;i++){
         }
     };
 
+
     //view: change the style of the product item (event mouseout)
     product__container.onmouseout = function(){
         if (product__container.classList.contains('selected')){
@@ -31,6 +32,7 @@ for (let i=0; i<3;i++){
         }
     }
 
+    
     //model: add class to item when 'onclick'
     product__container.onclick = function(){
         console.log(Array.from(product__container.classList));
