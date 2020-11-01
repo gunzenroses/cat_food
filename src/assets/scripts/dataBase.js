@@ -2,12 +2,16 @@ class ShowProducts {
     constructor(params) {
         this.data = params.data
         this.parentElement = params.parentElement
+
+        this.classContainer = params.classContainer
+        this.classProduct = params.classProduct
         this.classItem = params.classItem
         this.classMotto = params.classMotto
         this.classTitle = params.classTitle
         this.classTaste = params.classTaste
         this.classAmount = params.classAmount
         this.classImg = params.classImg
+        this.classCircle = params.classCircle
         this.classWeight = params.classWeight
         this.classMessage = params.classMessage
         this.classSpan = params.classSpan
@@ -15,20 +19,20 @@ class ShowProducts {
 
     render(){
         let elem = document.querySelector('#content__list');
+        elem.innerHTML = '';
         this.data.map(product => {
             return (
                 elem.innerHTML +=
             `
-                <li class="content__item">
-                    <div class="product__container">
-                        <div class=${this.classItem} id=${product.id}>
-                            
-                            <p class=${this.classMotto}>${product.motto}</p>
+                <li class=${this.classContainer} id=${product.id}>
+                    <div class=${this.classProduct}>
+                        <div class=${this.classItem}>
+                            <p class=${this.classMotto}></p>
                             <h4 class=${this.classTitle}>${product.title}</h4>
                             <p class=${this.classTaste}>${product.taste}</p>
                             <p class=${this.classAmount}>${product.amount}</p>
                             <img class=${this.classImg} src="${product.img}", alt="cat")/>
-                            <div class="product__circle">
+                            <div class=${this.classCircle}>
                                 <p class=${this.classWeight}>${product.weight}</p>
                                 <p class="product__subweight">кг</p>
                             </div>

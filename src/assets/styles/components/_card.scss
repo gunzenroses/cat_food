@@ -35,6 +35,14 @@
         justify-content: center;
         align-items: center;
         background: linear-gradient(135deg, transparent 30px, #1698D9 0);
+
+        &:hover {
+            background: linear-gradient(135deg, transparent 30px, #2EA8E6 0);
+        }
+
+        &:hover .product__circle{
+            background: #2EA8E6;
+        }
     }
 
     &__item {
@@ -57,7 +65,11 @@
         display: block;
         font-size: 16px;
         line-height: 20px;
-        text-align: center;
+        text-align: left;
+
+        &:after {
+            content: 'Сказочное заморское яство';
+        }
     }
 
     &__title {
@@ -141,8 +153,21 @@
 
 .selected {
     background: linear-gradient(135deg, transparent 30px, #D91667 0);
+
+    &:hover {
+        background: linear-gradient(135deg, transparent 30px, #E52E7A 0);
+    }
+
+    &:hover .selected_color {
+        background: #E52E7A;
+    }
+
+    &:hover .product__motto:after {
+        content: 'Котэ не одобряет?';
+        color: #E52E7A;
+    }
 }
 
 .selected_color {
-    background-color: $selected;
+    background: #D91667;
 }

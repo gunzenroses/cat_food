@@ -12,9 +12,3 @@ window.onload = (function () {
   let view = new ProductsView(model);
   let controller = new ProductsController(model, view);
 })();
-
-
-//     function () {
-//   require("scripts/products");
-//   require("scripts/itemHover");
-// };
