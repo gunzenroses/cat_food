@@ -19,16 +19,24 @@ class ProductsController {
     }
 
     setupHandlers(){
-        this.selectControlHandler = this.selectControl.bind(this);
+        this.selectHandler = this.select.bind(this);
+        this.unselectHandler = this.unselect.bind(this);
     }
 
     enable(){
-        this.view.selectButtonEvent.add(this.selectControlHandler);
+        this.view.fromViewSelectEvent.add(this.selectHandler);
+        this.view.fromViewUnselectEvent.add(this.unselectHandler);
     }
 
-    selectControl(index){
-        this.model.toggle(index);
-        console.log(index);
+    select(index){
+        console.log(`2 controller: select ${index}`)
+        this.model.fromControlSelect(index);
+        
+    }
+
+    unselect(index){
+        console.log(`2 controller: unselect ${index}`)
+        this.model.fromControlUnselect(index);
     }
 
 

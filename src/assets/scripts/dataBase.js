@@ -16,7 +16,8 @@ class ShowProducts {
     render(){
         let elem = document.querySelector('#content__list');
         this.data.map(product => {
-            return elem.innerHTML +=
+            return (
+                elem.innerHTML +=
             `
                 <li class="content__item">
                     <div class="product__container">
@@ -36,10 +37,9 @@ class ShowProducts {
                     </div>
                 <p class=${this.classMessage}>${product.message}<span class='link'>${product.span}</span></p>
                 </li>
-            `
-        })
+            `)
+        });
     }
 }
-
 
 export { ShowProducts }
