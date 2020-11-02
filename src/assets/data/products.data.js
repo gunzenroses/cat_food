@@ -1,7 +1,7 @@
 const productsData = [
     {
         id: 0,
-        itemLeft: 0,
+        itemLeft: 2,
         motto: 'Сказочное заморское яство',
         motto2: 'Котэ не одобряет?',
         title: 'Нямушка',
@@ -12,11 +12,12 @@ const productsData = [
         message: 'Чего сидишь? Порадуй кота, ',
         message2: 'Печень утки разварная с артишоками.',
         messageDisabled: 'Печалька, с фуа-гра закончился.',
-        span: 'купи',    
+        span: 'купи',
+        selected: false    
     },
     {
         id: 1,
-        itemLeft: 1,
+        itemLeft: 0,
         motto: 'Сказочное заморское яство',
         motto2: 'Котэ не одобряет?',
         title: 'Нямушка',
@@ -27,7 +28,8 @@ const productsData = [
         message: 'Чего сидишь? Порадуй кота, ',
         message2: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
         messageDisabled: 'Печалька, с рыбой закончился.',
-        span: 'купи'
+        span: 'купи',
+        selected: false 
     },
     {
         id: 2,
@@ -42,7 +44,8 @@ const productsData = [
         message: 'Чего сидишь? Порадуй кота, ',
         message2: 'Филе из цыплят с трюфелями в бульоне.',
         messageDisabled: 'Печалька, с курой закончился.',
-        span: 'купи'
+        span: 'купи',
+        selected: false 
     },
     
 ]

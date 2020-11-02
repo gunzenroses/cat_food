@@ -34,6 +34,7 @@ class ShowProducts {
         elem.innerHTML = '';
         this.data.map(product => {
             let availability = (product.itemLeft > 0);
+
             let classContainer = availability ?  this.classContainer : this.classContainerDisabled ;
             let classProduct = availability ? this.classProduct : this.classProductDisabled;
             let classItem = availability ? this.classItem : this.classItemDisabled;
@@ -44,6 +45,9 @@ class ShowProducts {
             let classImg = availability ? this.classImg : this.classImgDisabled;
             let classCircle = availability ? this.classCircle : this.classCircleDisabled;
             let classMessage = availability ? this.classMessage : this.classMessageDisabled;
+
+            let productMessage = availability ? product.message : product.messageDisabled;
+            let productSpan = availability ? product.span : "";
 
             return (
                 elem.innerHTML +=
@@ -63,7 +67,7 @@ class ShowProducts {
                             </div>
                         </div>
                     </div>
-                <p class=${classMessage}>${product.message}<span class='link'>${product.span}</span></p>
+                <p class=${classMessage}>${productMessage}<span class='link'>${productSpan}</span></p>
                 </li>
             `)
         });

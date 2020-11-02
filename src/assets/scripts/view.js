@@ -20,7 +20,6 @@ class ProductsView {
     }
 
     createChildren(){
-        //parentElement for productItems
         this.productsAll = document.querySelector('#content__list');
         //this.product__containers = Array.from(document.getElementsByClassName('product__container'));
         //this.product__circle = Array.from(document.getElementsByClassName('product__circle'));
