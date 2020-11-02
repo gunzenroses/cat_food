@@ -1,7 +1,5 @@
 import { EventDispatcher } from './eventDispatcher'
 import { ShowProducts } from './dataBase'
-import { nodeName } from 'jquery'
-
 
 class ProductsView {
     constructor(model){
@@ -67,20 +65,25 @@ class ProductsView {
 
 
     fromViewToggle(){
-        let index = event.target.closest('.content__item').id;
-        if (this.model.selected.includes(index)){
-                console.log(`1 view: fromViewToggle: ${index} already exist`);
-            this.fromViewUnselectEvent.notify(index);
-        } else {
-                console.log(`1 view: fromViewToggle: ${index} should be added`);
-            this.fromViewSelectEvent.notify(index);
+        try {
+            let index = event.target.closest('.content__item').id;
+                if (this.model.selected.includes(index)){
+                        console.log(`1 view: fromViewToggle: ${index} already exist`);
+                    this.fromViewUnselectEvent.notify(index);
+                } else {
+                        console.log(`1 view: fromViewToggle: ${index} should be added`);
+                    this.fromViewSelectEvent.notify(index);
+                }
+        } catch (e){
+            return false;
         }
     }
 
-    render(arr){
+    render(){
         let productsList = new ShowProducts({
             data: this.model.products,
             parentElement: 'content__list',
+
             classContainer: 'content__item',
             classProduct: 'product__container',
             classItem: 'product__item',
@@ -91,7 +94,18 @@ class ProductsView {
             classImg: 'product__img',
             classCircle: 'product__circle',
             classWeight: 'product__weight',
-            classMessage: 'product__message'
+            classMessage: 'product__message',
+
+            classContainerDisabled: 'content__item_disabled',
+            classProductDisabled: 'product__container_disabled',
+            classItemDisabled: 'product__item_disabled',
+            classMottoDisabled: 'product__motto_disabled',
+            classTitleDisabled: 'product__title_disabled',
+            classTasteDisabled: 'product__taste_disabled',
+            classAmountDisabled: 'product__amount_disabled',
+            classImgDisabled: 'product__img_disabled',
+            classCircleDisabled: 'product__circle_disabled',
+            classMessageDisabled: 'product__message_disabled',
         });
 
         return productsList.render();

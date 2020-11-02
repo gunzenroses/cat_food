@@ -1,7 +1,7 @@
 const productsData = [
     {
         id: 0,
-        itemLeft: 1,
+        itemLeft: 0,
         motto: 'Сказочное заморское яство',
         motto2: 'Котэ не одобряет?',
         title: 'Нямушка',

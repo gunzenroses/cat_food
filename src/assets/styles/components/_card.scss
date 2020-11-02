@@ -20,12 +20,16 @@
         width: 320px;
         height: 528px;
         overflow: visible;
+
+        &_disabled {
+            pointer-events: none;
+        }
     }
 }
 
 .product {
     font-family: $trebuchet;
-    color: #000000;
+    color: $basicDark;
 
     &__container {
         width: 320px;
@@ -34,14 +38,19 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(135deg, transparent 30px, #1698D9 0);
+        background: linear-gradient(135deg, transparent 30px, #1698d9 0);
+
+        &_disabled {
+            @extend .product__container;
+            background: linear-gradient(135deg, transparent 30px, #b3b3b3 0);
+        }
 
         &:hover {
-            background: linear-gradient(135deg, transparent 30px, #2EA8E6 0);
+            background: linear-gradient(135deg, transparent 30px, #2ea8e6 0);
         }
 
         &:hover .product__circle{
-            background: #2EA8E6;
+            background: $defaultHover;
         }
     }
 
@@ -50,12 +59,16 @@
         position: relative;
         width: 312px;
         height: 491px;
-        background-color: #F2F2F2;
+        background-color: $basicLight;
         display: flex;
         flex-direction: column;
         overflow: hidden;
         border-radius: 8px;
-        background: linear-gradient(135deg, transparent 29px, white 0);
+        background: linear-gradient(135deg, transparent 29px, #fff 0);
+
+        &_disabled {
+            @extend .product__item;
+        }
 }
 
     &__motto {
@@ -67,9 +80,18 @@
         line-height: 20px;
         text-align: left;
 
+        &_disabled {
+            @extend .product__motto;
+            color: $disabled;
+            &:after {
+                content: 'Сказочное заморское яство';
+            }
+        }
+
         &:after {
             content: 'Сказочное заморское яство';
         }
+
     }
 
     &__title {
@@ -79,6 +101,11 @@
         margin-top: 67px;
         margin-left: 44px;
         font-size: 48px;
+        
+        &_disabled {
+            @extend .product__title;
+            color: $disabled;
+        }
     }
 
     &__taste {
@@ -89,6 +116,11 @@
         line-height: 65px;
         top: calc(50% - 65px/2 - 122px - 4px);
         margin-left: 47px;
+
+        &_disabled {
+            @extend .product__taste;
+            color: $disabled;
+        }
     }
 
     &__amount {
@@ -99,7 +131,12 @@
         font-size: 14px;
         line-height: 16px;
         top: calc(50% - 16px/2 - 99.5px);
-        color: #666;
+        color: $grey;
+
+        &_disabled {
+            @extend .product__amount;
+            color: $disabled;
+        }
     }
 
     &__img {
@@ -108,6 +145,11 @@
         right: -7.5%;
         top: 40.86%;
         bottom: -11.59%;
+
+        &_disabled {
+            @extend .product__img;
+            opacity: 0.5;
+        }
     }
 
     &__circle {
@@ -118,7 +160,12 @@
         width:80px;
         height: 80px;
         border-radius: 50%;
-        color: #fff;
+        color: $basicPlain;
+
+        &_disabled {
+            @extend .product__circle;
+            background: $disabled;
+        }
     }
 
     &__weight {
@@ -146,8 +193,13 @@
         font-size: 13px;
         line-height: 16px;
         text-align: center;
-        color: #fff;
+        color: $basicPlain;
         margin: 14px auto 0;
+
+        &_disabled {
+            @extend .product__message;
+            color: $warning;
+        }
     }
 }
 
@@ -159,15 +211,19 @@
     }
 
     &:hover .selected_color {
-        background: #E52E7A;
+        background: $selectedHover;
     }
 
     &:hover .product__motto:after {
         content: 'Котэ не одобряет?';
-        color: #E52E7A;
+        color: $selectedHover;
     }
 }
 
 .selected_color {
-    background: #D91667;
+    background: $selected;
+}
+
+.disabled {
+    color: $disabled;
 }

@@ -6,6 +6,7 @@ class ProductsModel {
         this.products = [...productsData]
         this.selected = []
         this.fromModelSelectEvent = new EventDispatcher(this);
+        this.fromModelDisabledEvent = new EventDispatcher(this);
     }
 
     fromControlSelect(index){

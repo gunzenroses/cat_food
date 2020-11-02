@@ -15,31 +15,55 @@ class ShowProducts {
         this.classWeight = params.classWeight
         this.classMessage = params.classMessage
         this.classSpan = params.classSpan
+
+        
+        this.classContainerDisabled = params.classContainerDisabled
+        this.classProductDisabled = params.classProductDisabled
+        this.classItemDisabled = params.classItemDisabled
+        this.classMottoDisabled = params.classMottoDisabled
+        this.classTitleDisabled = params.classTitleDisabled
+        this.classTasteDisabled = params.classTasteDisabled
+        this.classAmountDisabled = params.classAmountDisabled
+        this.classImgDisabled = params.classImgDisabled
+        this.classCircleDisabled = params.classCircleDisabled
+        this.classMessageDisabled = params.classMessageDisabled
     }
 
     render(){
         let elem = document.querySelector('#content__list');
         elem.innerHTML = '';
         this.data.map(product => {
+            let availability = (product.itemLeft > 0);
+            let classContainer = availability ?  this.classContainer : this.classContainerDisabled ;
+            let classProduct = availability ? this.classProduct : this.classProductDisabled;
+            let classItem = availability ? this.classItem : this.classItemDisabled;
+            let classMotto = availability ? this.classMotto : this.classMottoDisabled;
+            let classTitle = availability ? this.classTitle : this.classTitleDisabled;
+            let classTaste = availability ? this.classTaste : this.classTasteDisabled;
+            let classAmount = availability ? this.classAmount : this.classAmountDisabled;
+            let classImg = availability ? this.classImg : this.classImgDisabled;
+            let classCircle = availability ? this.classCircle : this.classCircleDisabled;
+            let classMessage = availability ? this.classMessage : this.classMessageDisabled;
+
             return (
                 elem.innerHTML +=
             `
-                <li class=${this.classContainer} id=${product.id}>
-                    <div class=${this.classProduct}>
-                        <div class=${this.classItem}>
-                            <p class=${this.classMotto}></p>
-                            <h4 class=${this.classTitle}>${product.title}</h4>
-                            <p class=${this.classTaste}>${product.taste}</p>
-                            <p class=${this.classAmount}>${product.amount}</p>
-                            <img class=${this.classImg} src="${product.img}", alt="cat")/>
-                            <div class=${this.classCircle}>
+                <li class=${classContainer} id=${product.id}>
+                    <div class=${classProduct}>
+                        <div class=${classItem}>
+                            <p class=${classMotto}></p>
+                            <h4 class=${classTitle}>${product.title}</h4>
+                            <p class=${classTaste}>${product.taste}</p>
+                            <p class=${classAmount}>${product.amount}</p>
+                            <img class=${classImg} src="${product.img}", alt="cat")/>
+                            <div class=${classCircle}>
                                 <p class=${this.classWeight}>${product.weight}</p>
                                 <p class="product__subweight">кг</p>
                             </div>
                             </div>
                         </div>
                     </div>
-                <p class=${this.classMessage}>${product.message}<span class='link'>${product.span}</span></p>
+                <p class=${classMessage}>${product.message}<span class='link'>${product.span}</span></p>
                 </li>
             `)
         });
