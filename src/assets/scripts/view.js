@@ -22,9 +22,9 @@ class ProductsView {
     createChildren(){
         //parentElement for productItems
         this.productsAll = document.querySelector('#content__list');
-        this.product__containers = Array.from(document.getElementsByClassName('product__container'));
-        this.product__circle = Array.from(document.getElementsByClassName('product__circle'));
-        this.product__message =  Array.from(document.getElementsByClassName('product__message'));
+        //this.product__containers = Array.from(document.getElementsByClassName('product__container'));
+        //this.product__circle = Array.from(document.getElementsByClassName('product__circle'));
+        //this.product__message =  Array.from(document.getElementsByClassName('product__message'));
 
         return this;
     }
@@ -44,23 +44,24 @@ class ProductsView {
     }
 
     fromModelSelect(idx){
-                if (this.product__containers[idx].classList.contains('selected')){
-                    this.product__containers[idx].classList.remove('selected');
-                    this.product__circle[idx].classList.remove('selected_color');
-                    this.product__message[idx].innerHTML = `  
+        let elem = document.getElementById(idx);
+        let container = elem.querySelector('.product__container');
+        let circle = elem.querySelector('.product__circle');
+        let message = elem.querySelector('.product__message');
+            if (container.classList.contains('selected')){
+                container.classList.remove('selected');
+                circle.classList.remove('selected_color');
+                message.innerHTML = `  
                                         <div>
                                             ${this.model.products[idx].message}
                                             <span class='link'>${this.model.products[idx].span}</span>
                                         </div>
-                                        `
-                        console.log(this.product__containers[idx].classList);
-                } else {
-                    this.product__containers[idx].classList.add('selected');
-                    this.product__circle[idx].classList.add('selected_color');
-                    this.product__message[idx].innerHTML = `${this.model.products[idx].message2}`;
-                        console.log(this.product__containers[idx].classList);
-                }
-        ;
+                                    `
+            } else {
+                container.classList.add('selected');
+                circle.classList.add('selected_color');
+                message.innerHTML = `${this.model.products[idx].message2}`;
+            }
     }
 
 

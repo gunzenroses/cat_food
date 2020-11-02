@@ -11,6 +11,7 @@ const productsData = [
         weight: '0,5',
         message: 'Чего сидишь? Порадуй кота, ',
         message2: 'Печень утки разварная с артишоками.',
+        messageDisabled: 'Печалька, с фуа-гра закончился.',
         span: 'купи',    
     },
     {
@@ -25,6 +26,7 @@ const productsData = [
         weight: '2',
         message: 'Чего сидишь? Порадуй кота, ',
         message2: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
+        messageDisabled: 'Печалька, с рыбой закончился.',
         span: 'купи'
     },
     {
@@ -39,6 +41,7 @@ const productsData = [
         weight: '5',
         message: 'Чего сидишь? Порадуй кота, ',
         message2: 'Филе из цыплят с трюфелями в бульоне.',
+        messageDisabled: 'Печалька, с курой закончился.',
         span: 'купи'
     },
     
