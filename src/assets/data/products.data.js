@@ -1,7 +1,7 @@
 const productsData = [
     {
         id: 0,
-        itemLeft: 2,
+        itemLeft: 20,
         motto: 'Сказочное заморское яство',
         motto2: 'Котэ не одобряет?',
         title: 'Нямушка',
@@ -10,7 +10,7 @@ const productsData = [
         img: "assets/images/cat.png",
         weight: '0,5',
         message: 'Чего сидишь? Порадуй кота, ',
-        message2: 'Печень утки разварная с артишоками.',
+        messageSelected: 'Печень утки разварная с артишоками.',
         messageDisabled: 'Печалька, с фуа-гра закончился.',
         span: 'купи',
         selected: false    
@@ -26,14 +26,14 @@ const productsData = [
         img: "assets/images/cat.png",
         weight: '2',
         message: 'Чего сидишь? Порадуй кота, ',
-        message2: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
+        messageSelected: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
         messageDisabled: 'Печалька, с рыбой закончился.',
         span: 'купи',
         selected: false 
     },
     {
         id: 2,
-        itemLeft: 1,
+        itemLeft: 20,
         motto: 'Сказочное заморское яство',
         motto2: 'Котэ не одобряет?',
         title: 'Нямушка',
@@ -42,7 +42,7 @@ const productsData = [
         img: "assets/images/cat.png",
         weight: '5',
         message: 'Чего сидишь? Порадуй кота, ',
-        message2: 'Филе из цыплят с трюфелями в бульоне.',
+        messageSelected: 'Филе из цыплят с трюфелями в бульоне.',
         messageDisabled: 'Печалька, с курой закончился.',
         span: 'купи',
         selected: false 

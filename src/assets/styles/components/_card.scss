@@ -52,6 +52,24 @@
         &:hover .product__circle{
             background: $defaultHover;
         }
+
+        &_selected {
+            @extend .product__container;
+            background: linear-gradient(135deg, transparent 30px, #D91667 0);
+        
+            &:hover {
+                background: linear-gradient(135deg, transparent 30px, #E52E7A 0);
+            }
+        
+            &:hover .product__circle_selected {
+                background: $selectedHover;
+            }
+        
+            &:hover .product__motto:after {
+                content: 'Котэ не одобряет?';
+                color: $selectedHover;
+            }
+        }
     }
 
     &__item {
@@ -166,6 +184,11 @@
             @extend .product__circle;
             background: $disabled;
         }
+
+        &_selected {
+            @extend .product__circle;
+            background: $selected;
+        }
     }
 
     &__weight {
@@ -203,26 +226,23 @@
     }
 }
 
-.selected {
-    background: linear-gradient(135deg, transparent 30px, #D91667 0);
+// .selected {
+//     background: linear-gradient(135deg, transparent 30px, #D91667 0);
 
-    &:hover {
-        background: linear-gradient(135deg, transparent 30px, #E52E7A 0);
-    }
+//     &:hover {
+//         background: linear-gradient(135deg, transparent 30px, #E52E7A 0);
+//     }
 
-    &:hover .selected_color {
-        background: $selectedHover;
-    }
+//     &:hover .selected_color {
+//         background: $selectedHover;
+//     }
 
-    &:hover .product__motto:after {
-        content: 'Котэ не одобряет?';
-        color: $selectedHover;
-    }
-}
+//     &:hover .product__motto:after {
+//         content: 'Котэ не одобряет?';
+//         color: $selectedHover;
+//     }
+// }
 
-.selected_color {
-    background: $selected;
-}
 
 .disabled {
     color: $disabled;

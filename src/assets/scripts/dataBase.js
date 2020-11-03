@@ -33,21 +33,32 @@ class ShowProducts {
         let elem = document.querySelector('#content__list');
         elem.innerHTML = '';
         this.data.map(product => {
-            let availability = (product.itemLeft > 0);
 
-            let classContainer = availability ?  this.classContainer : this.classContainerDisabled ;
-            let classProduct = availability ? this.classProduct : this.classProductDisabled;
-            let classItem = availability ? this.classItem : this.classItemDisabled;
-            let classMotto = availability ? this.classMotto : this.classMottoDisabled;
-            let classTitle = availability ? this.classTitle : this.classTitleDisabled;
-            let classTaste = availability ? this.classTaste : this.classTasteDisabled;
-            let classAmount = availability ? this.classAmount : this.classAmountDisabled;
-            let classImg = availability ? this.classImg : this.classImgDisabled;
-            let classCircle = availability ? this.classCircle : this.classCircleDisabled;
-            let classMessage = availability ? this.classMessage : this.classMessageDisabled;
+            // checking the availability of the product item
+            let unavailable = (product.itemLeft < 1);
 
-            let productMessage = availability ? product.message : product.messageDisabled;
-            let productSpan = availability ? product.span : "";
+            let classContainer = unavailable ? this.classContainerDisabled : this.classContainer ;
+            let classProduct = unavailable ? this.classProductDisabled : this.classProduct;
+            let classItem = unavailable ? this.classItemDisabled : this.classItem;
+            let classMotto = unavailable ? this.classMottoDisabled : this.classMotto ;
+            let classTitle = unavailable ? this.classTitleDisabled : this.classTitle;
+            let classTaste = unavailable ? this.classTasteDisabled : this.classTaste;
+            let classAmount = unavailable ? this.classAmountDisabled : this.classAmount;
+            let classImg = unavailable ? this.classImgDisabled : this.classImg;
+            let classCircle = unavailable ? this.classCircleDisabled : this.classCircle;
+            let classMessage = unavailable ? this.classMessageDisabled : this.classMessage;
+            
+            let productMessage = unavailable ? product.messageDisabled : product.message ;
+            let productSpan = unavailable ? "" : product.span ;
+
+            //checking if item selected
+                // let selected = product.selected;
+
+                // let productMessage = unavailable ? product.messageDisabled : 
+                //                     selected ? product.messageSelected : product.message;
+                //                     console.log(`product message is equal to ${productMessage}`)
+                // let productSpan = unavailable ? "" : 
+                //                     selected ? "" : product.span;
 
             return (
                 elem.innerHTML +=

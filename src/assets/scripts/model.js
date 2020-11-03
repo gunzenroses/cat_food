@@ -12,13 +12,17 @@ class ProductsModel {
     fromControlSelect(index){
         console.log(`3 model: fromControlSelect: ${index} with type ${typeof(index)}`)
         this.selected.push(index);
-        this.fromModelSelectEvent.notify(index);
+        this.products[index].selected = !this.products[index].selected;
+        console.log(`4: model: this.products ${index}.selected = ${this.products[index].selected}`);
+        this.fromModelSelectEvent.notify(this.products);
     }
 
     fromControlUnselect(index){
         console.log(`3 model: fromControlUnselect: ${index} with type ${typeof(index)}`)
         this.selected = this.selected.filter(element => element!==index);
-        this.fromModelSelectEvent.notify(index);
+        this.products[index].selected = !this.products[index].selected;
+        console.log(`4: model: this.products ${index}.selected = ${this.products[index].selected}`);
+        this.fromModelSelectEvent.notify(this.products);
     }
 }
 
