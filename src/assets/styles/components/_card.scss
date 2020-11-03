@@ -225,25 +225,3 @@
         }
     }
 }
-
-// .selected {
-//     background: linear-gradient(135deg, transparent 30px, #D91667 0);
-
-//     &:hover {
-//         background: linear-gradient(135deg, transparent 30px, #E52E7A 0);
-//     }
-
-//     &:hover .selected_color {
-//         background: $selectedHover;
-//     }
-
-//     &:hover .product__motto:after {
-//         content: 'Котэ не одобряет?';
-//         color: $selectedHover;
-//     }
-// }
-
-
-.disabled {
-    color: $disabled;
-}

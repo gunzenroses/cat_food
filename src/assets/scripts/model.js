@@ -10,19 +10,19 @@ class ProductsModel {
     }
 
     fromControlSelect(index){
-        console.log(`3 model: fromControlSelect: ${index} with type ${typeof(index)}`)
+        console.log(`3. info that you selected card[${index}] with index type "${typeof(index)}" came (model.js: method fromControlSelect)`)
         this.selected.push(index);
         this.products[index].selected = !this.products[index].selected;
-        console.log(`4: model: this.products ${index}.selected = ${this.products[index].selected}`);
-        this.fromModelSelectEvent.notify(this.products);
+            console.log(`4. now this.card[${index}].selected = ${this.products[index].selected} (model.js: method fromControlSelect)`);
+        this.fromModelSelectEvent.notify(index);
     }
 
     fromControlUnselect(index){
-        console.log(`3 model: fromControlUnselect: ${index} with type ${typeof(index)}`)
+            console.log(`3. info that you unselected card[${index}] with index type "${typeof(index)}" came (model.js: method fromControlSelect)`)
         this.selected = this.selected.filter(element => element!==index);
         this.products[index].selected = !this.products[index].selected;
-        console.log(`4: model: this.products ${index}.selected = ${this.products[index].selected}`);
-        this.fromModelSelectEvent.notify(this.products);
+            console.log(`4. now this.card[${index}].selected = ${this.products[index].selected} (model.js: method fromControlSelect)`);
+        this.fromModelSelectEvent.notify(index);
     }
 }
 

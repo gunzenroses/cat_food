@@ -1,5 +1,4 @@
 import { EventDispatcher } from './eventDispatcher'
-import { ShowProducts } from './dataBase'
 
 class ProductsView {
     constructor(model){
@@ -42,25 +41,10 @@ class ProductsView {
         return this;
     }
 
-    fromModelSelect(item){
-
-        // // this.model.products[indx].selected = !this.model.products[indx].selected;
-        // // console.log(this.model.products[indx].selected);
-        // let indexedElement = document.getElementById(indx);
-        // let indexedContainer = indexedElement.querySelector('.product__container');
-        // let circle = indexedElement.querySelector('.product__circle');
-
-        //     if (indexedContainer.classList.contains('selected')){
-        //         indexedContainer.classList.remove('selected');
-        //         circle.classList.remove('selected_color');
-        //         console.log(indexedContainer.classList);
-        //     } else {
-        //         indexedContainer.classList.add('selected');
-        //         circle.classList.add('selected_color');
-        //         console.log(indexedContainer.classList);
-        //     }
-
-        this.render(item);
+    fromModelSelect(index) {
+        console.log(`5. info "that card[${index}].selected = ${this.model.products[index].selected}" came to re-render the view (view.js: method fromModelSelected)`);
+        console.log(`P.S. One of these cards is disabled, cause no item of this specific product is left. You can change it in "products.data.js" = > "itemLeft: > 0"`)
+        this.render();
     }
 
 
@@ -68,10 +52,12 @@ class ProductsView {
         try {
             let index = event.target.closest('.content__item').id;
                 if (this.model.selected.includes(index)){
-                        console.log(`1 view: fromViewToggle: ${index} already exist`);
+                    console.log('Hey! These messages help you to understand how this code works')
+                    console.log(`1. you unselected card[${index}] (view.js : method fromViewToggle)`);
                     this.fromViewUnselectEvent.notify(index);
                 } else {
-                        console.log(`1 view: fromViewToggle: ${index} should be added`);
+                    console.log('Hey! These messages help you to understand how this code works')
+                    console.log(`1. you selected card[${index}] (view.js : method fromViewToggle)`);
                     this.fromViewSelectEvent.notify(index);
                 }
         } catch (e){
@@ -83,19 +69,12 @@ class ProductsView {
 
         let elem = document.querySelector('#content__list');
         elem.innerHTML = '';
-        // let products = this.model.products;
-        // console.log(this.model.products);
-
         this.model.products.map(product => {
-
-            console.log(product);
-            // checking the availability of the product item and if it's selected
+            // checking the availability of the product item and whether it was selected
             let unavailable = (product.itemLeft < 1);
             let ifSelected = product.selected;
-            
-            console.log(`5 view: ifSelected: ${ifSelected}`);
 
-            // choosing style in dependance with availability of the product
+            // choosing style of product in dependance with its availability and whether it was selected
                 let classContainer = unavailable ? 'content__item_disabled' : 'content__item';
                 let classProduct = unavailable 
                                     ? 'product__container_disabled' 
@@ -113,7 +92,7 @@ class ProductsView {
 
                 let classMessage = unavailable ? 'product__message_disabled' : 'product__message';
             
-            // choosing message in dependance with availability of the product and if it's selected
+            // choosing message under product card in dependance with availability of the product and whether it was selected
                 let productMessage = unavailable 
                                     ? product.messageDisabled
                                     : ifSelected ? product.messageSelected : product.message;

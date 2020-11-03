@@ -29,13 +29,13 @@ class ProductsController {
     }
 
     select(index){
-        console.log(`2 controller: select ${index}`)
+        console.log(`2. info "card[${index}] is selected" is processed in Controller from View to Model (controller.js: method select)`)
         this.model.fromControlSelect(index);
-        
     }
 
     unselect(index){
-        console.log(`2 controller: unselect ${index}`)
+        console.log(`2. info "card[${index}] is unselected" is processed in Controller from View to Model (controller.js: method select)`)
+
         this.model.fromControlUnselect(index);
     }
 
