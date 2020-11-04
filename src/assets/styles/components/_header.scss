@@ -1,0 +1,20 @@
+.header {
+    max-width: 1120px;
+    min-height: 80px;
+    margin: auto;
+    padding-top: 39px;
+    font-family: $exo2thin;
+    @include isFlex($align: flex-start);
+    
+    &__header {
+        min-height: 40px;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        font-size: 36px;
+        line-height: 35px;
+        text-align: center;
+        color: $basicPlain;
+        text-shadow: 0px 1px 1px $basicDark;
+    }
+}

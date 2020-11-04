@@ -15,9 +15,9 @@
   background-size: $size;
 }
 
-@mixin container($width: 1124, $height: 680, $margin: auto, $padding: 0) {
-  width: $width + px;
-  height: $height + px;
+@mixin container($max-width: 1124, $min-height: 680, $margin: auto, $padding: 0) {
+  max-width: $max-width + px;
+  min-height: $min-height + px;
   margin: $margin;
   padding: $padding;
 }

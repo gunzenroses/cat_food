@@ -2,23 +2,21 @@
     &__container{
         width: 100%;
         margin: 0 auto;
-        display: flex;
-        align-items: flex-start;
+        @include isFlex($align: flex-start, $justify: space-evenly)
         
     }
 
     &__list {
         width: 100%;
         margin-top: 22px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: flex-start;
-        flex-wrap: wrap;
+        min-height: 509px;
+        @include isFlex($align: flex-start, $justify: space-evenly);
+        
     }
 
     &__item {
         width: 320px;
-        height: 528px;
+        height: 509px;
         overflow: visible;
 
         &_disabled {
@@ -33,11 +31,9 @@
 
     &__container {
         width: 320px;
-        height: 499px;
+        height: 480px;
         border-radius: 12px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include isFlex;
         background: linear-gradient(135deg, transparent 30px, #1698d9 0);
 
         &_disabled {
@@ -76,7 +72,7 @@
         box-sizing: border-box;
         position: relative;
         width: 312px;
-        height: 491px;
+        height: 472px;
         background-color: $basicLight;
         display: flex;
         flex-direction: column;
@@ -90,12 +86,13 @@
 }
 
     &__motto {
-        width: 218px;
-        margin: 29px auto 0;
+        width: 205px;
+        margin-top: 18px;
+        margin-left: 47px;
         height: 20px;
         display: block;
         font-size: 16px;
-        line-height: 20px;
+        line-height: 18.6px;
         text-align: left;
 
         &_disabled {
@@ -114,11 +111,14 @@
 
     &__title {
         font-family: $trebuchet_bold;
-        font-weight: bold;
-        position: absolute;
-        margin-top: 67px;
+        width: 211px;
+        height: 56px;
+        display: block;
+        margin-top: 4px;
         margin-left: 44px;
-        font-size: 48px;
+        font-weight: bold;
+        font-size: 47px;
+        letter-spacing: 0.6px;
         
         &_disabled {
             @extend .product__title;
@@ -127,13 +127,13 @@
     }
 
     &__taste {
+        font-family: $trebuchet_bold;
         display: block;
-        position: absolute;
-        height: 65px;
+        width: 120px;
+        height: 29px;
         font-size: 24px;
-        line-height: 65px;
-        top: calc(50% - 65px/2 - 122px - 4px);
         margin-left: 47px;
+        line-height: 25px;
 
         &_disabled {
             @extend .product__taste;
@@ -142,13 +142,14 @@
     }
 
     &__amount {
-        position: absolute;
-        height: 16px;
+        width: 127px;
+        height: 48px;
         display: block;
+        margin-top: 12px;
         margin-left: 47px;
         font-size: 14px;
         line-height: 16px;
-        top: calc(50% - 16px/2 - 99.5px);
+        letter-spacing: 1.5;
         color: $grey;
 
         &_disabled {
@@ -159,10 +160,10 @@
 
     &__img {
         position: absolute;
-        left: -7.5%;
-        right: -7.5%;
-        top: 40.86%;
-        bottom: -11.59%;
+        left: -9%;
+        //right: -7.5%;
+        top: 43.2%;
+        //bottom: -11%;
 
         &_disabled {
             @extend .product__img;
@@ -192,36 +193,38 @@
     }
 
     &__weight {
-        font-family: $exo2thin;
-        position: absolute;
+        font-family: $trebuchet;
         height: 22px;
         width: 57px;
-        margin: 24px 12.5px 0;
+        margin: 20px auto 0;
         font-size: 42px;
         text-align: center;
         line-height: 22px;
     }
 
     &__subweight {
-        position: absolute;
         width: 21px;
         height: 22px;
         font-size: 21px;
         line-height: 22px;
-        margin: 54px 30.5px 0;
+        margin-top: 7.5px;
+        margin-left: 30px;
     }
 
     &__message {
         height: 35px;
         font-size: 13px;
-        line-height: 16px;
-        text-align: center;
+        line-height: 15px;
+        font-family: $trebuchet;
         color: $basicPlain;
-        margin: 14px auto 0;
+        margin-top: 13.5px;
+        margin-left: 56px;
 
         &_disabled {
             @extend .product__message;
             color: $warning;
+            margin-left: 65.5px;
+            line-height: 16px;
         }
     }
 }
