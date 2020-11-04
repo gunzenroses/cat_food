@@ -1,20 +1,18 @@
-# Webpack 4 project starter with Pug, Sass/Stylus, jQuery, VanillaJS, Babel and Yarn
+## Testing task with MVC
 
-The purpose if this Webpack Starter is to allow people to create websites without frameworks/libraries like React only using simple but powerful technologies to build quality websites.
+This project was created to learn:
+- basics of mvc design pattern
+- technologies for frontend development
 
 ## Technologies used
-
+"Webpack 4 project starter kit" was created by "MarioDev" and includes:
 - Templating: `Pug`
 - Styling: `Sass`
 - Scripting: `VanillaJS`
 - JS Compiler: `Babel ES6`
 
 ## Features
+In console you can find the information:
+- in what order functions process the event ("product selection")
+- how model, view and controller are interconnected in this application
 
-- Well organized folder structure for view, styles and assets.
-- Webpack notifier on every compilation.
-- Compatibility with `manifest`, `browserconfig` and other external files you wish to include.
-- `Babel module resolver` configured to use alias and simplify the paths you need to import.
-- `Editorconfig`
-- Yarn instead NPM
-- PostCSS
